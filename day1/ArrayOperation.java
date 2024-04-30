@@ -130,16 +130,34 @@ public class ArrayOperation {
 	
 	public void zigZagMergeArray()
 	{
-		int[] num1 = {1,2,3,4};
-		int[] num2 = {5,6,7,8};
-		System.out.println("ZigZagMerged Array");
-		int[] newArr = new int[num1.length + num2.length];
-		for(int i=0; i<num1.length;i++)
-		{
-			
-		}
-		
-	}
+	   
+	        int[] arr1 = {1, 2, 3, 4};
+	        int[] arr2 = {5, 6, 7, 8};
+	        int m1 = arr1.length;
+	        int m2 = arr2.length;
+	        int[] res = new int[m1 + m2];
+	        System.out.println("Zig Zag Merged Array");
+
+	   
+	        for (int i = 0; i < m1; i++) {
+	            res[i] = arr1[i];
+	        }
+	        for (int j = 0; j < m2; j++) {
+	            res[m1 + j] = arr2[j];
+	        }
+
+	     
+	        int i = 0;
+	        int j = res.length - 1;
+	        while (i <= j) {
+	            System.out.print(res[i] + " ");
+	            i++;
+	            if (i <= j) {
+	                System.out.print(res[j] + " ");
+	                j--;
+	            }
+	        }
+	    }
 	
 	
 	//Union Array
@@ -149,6 +167,7 @@ public class ArrayOperation {
 		int[] arr2 = {4,5,7,8};
 		int[] newArr = new int[arr1.length + arr2.length];
 		int i=0, j=0, k=0;
+		System.out.println("Union array");
 		while(i < arr1.length && j < arr2.length)
 		{
 			if(arr1[i] == arr2[j])
@@ -189,25 +208,147 @@ public class ArrayOperation {
 		}
 	}
 	
+	public void duplicateElement() {
+		 int[] arr = {1,2,3,4,2,1,3,5,6,7};
+		 System.out.println("Duplicate Element");
+	        for(int i=0;i<arr.length-1;i++)
+	        {
+	            for(int j=i+1; j<arr.length;j++)
+	            {
+	                if(arr[i]==arr[j])
+	                {
+	                    System.out.println(arr[i]);
+	                }
+	            }
+	        }
+	}
+	
+	public void intersection()
+	{
+		int[] arr = {1, 2, 3, 4};
+		int[] arr1 = {3, 4, 5, 6};
+		int[] newArr = new int[arr.length + arr1.length];
+		int i=0, j=0, k=0;
+		System.out.println("Interscetion array");
+		while(i<arr.length && j<arr1.length)
+		{
+			if(arr[i] == arr[j])
+			{
+				newArr[k++] = arr1[i++];
+				j++;
+			}
+				else if (arr[i] < arr1[j]) {
+                i++;
+            } 
+				else 
+				{
+                j++;
+            }
+        }
+        System.out.println("Intersection:");
+        for (int value = 0; value < k; value++) {
+            if (newArr[value] != 0)
+                System.out.println(newArr[value]);
+        	}
+		}
+	
+	public void removeDuplicateElement() {
+		int arr[] = {1,2,3,4,5,1,2,3,7,8};
+		int n = arr.length;
+		int i, j;
+		System.out.println("Removed Duplicate");
+		for (i = 0; i < n; i++) 
+		{
+            for (j = 0; j < i; j++)
+            {
+                if (arr[i] == arr[j]) 
+                {
+                    break;
+                }
+            }
+            if (i == j) 
+            {
+                System.out.println(arr[i] + " ");
+               
+            }
+        }
+    }
+	
+	public void occurrenceNumber() {
+		
+		int[] arr = {1,2,3,2,3,6};
+		 Arrays.sort(arr);
+	        int current = arr[0];
+	        int count = 1;
+	        for (int i = 1; i < arr.length; i++) {
+	            if (arr[i] == current) {
+	                count++;
+	            } else {
+	                System.out.println("Total occurrences of " + current + ": " + count);
+	                current = arr[i];
+	                count = 1;
+	            }
+	        }
+	        System.out.println("Total occurrences of " + current + ": " + count);
+	    }
+	
+	public int countPrime() 
+	{
+		 int n = 10;
+	     int count = countPrime();
+		boolean[] isPrime = new boolean[n];
+        for (int i = 2; i < n; i++) {
+            isPrime[i] = true;
+        }
+        for (int i = 2; i * i < n; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j < n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        count = 0;
+        for (int i = 2; i < n; i++) {
+            if (isPrime[i]) {
+                count++;
+            }
+        }
+        System.out.println("Total prime numbers up to " + n + ": " + count);
+        return count;
+    }
+	
+	
+
+	
 		public static void main(String[] args)
 	
 	{
 		ArrayOperation a = new ArrayOperation();
 		a.createArray();
-		System.out.println(a);
+		
 		a.printArray();
-		System.out.println(a);
+
 		a.reverseArray();
-		System.out.println(a);
+		
 		a.sortArray();
-		System.out.println(a);
+		
 		a.maxArray();
-		System.out.println(a);
+	
 		a.minArray();
-		System.out.println(a);
+		
 		a.mergeArray();
-		System.out.println(a);
+		
 		a.union();
-		System.out.println(a);
+		
+		a.duplicateElement();
+		
+		a.zigZagMergeArray();
+		
+		a.intersection();
+		
+		a.occurrenceNumber();
+		
+		a.countPrime();
+		
 	}
 }
