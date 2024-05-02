@@ -1,6 +1,6 @@
 package excelsoft.collection;
 
-public class Employee implements Comparable 
+public class Employee implements Comparable<Employee> 
 {
 	
 	private Integer id;
@@ -52,13 +52,16 @@ public class Employee implements Comparable
 
 
 	@Override
-	public int compareTo(Object o) {
-		return 0;
+	public int compareTo(Employee o) 
+	{
+		return this.id.compareTo(o.id);
 	}
 	
+	@Override
 	public String toString(Object o)
 	{
 		return id + " " + name + " " + salary;
+		
 	}
 
 }

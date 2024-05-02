@@ -29,11 +29,13 @@ public class MainClass {
 //		employees.sort((o1, o2) -> o1.getId().compareTo(o2.getId()));
 		
 		
-		for(Employee emp : employees)
-		{
-			System.out.println(emp.getId() + " " + emp.getName() + " " + emp.getSalary());
-			employees.sort();
-		}
+		// Collections.sort(employees,(e1,e2)->(e1.getId()).compareTo(e2.getId()));
+		//employees.forEach(System.out::println);
+		//s.close();
+		
+		Collections.sort(employees);
+		employees.forEach(System.out :: println );
+		s.close();
 	}
 	
 }
