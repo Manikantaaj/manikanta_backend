@@ -69,27 +69,20 @@ public class StringPractice {
 		}
 	}
 
-	public void isPanagram()
-	{
-		String str = "Manikanta";
+	public static boolean isPanagaram(String str){
 		int[] freq = new int[26];
-		str = str.toUpperCase();
-		System.out.println("Panagram");
+		str=str.toUpperCase();
 		for(int i=0;i<str.length();i++)
 		{
-			freq[str.charAt(i) - 65]++;
+			freq[str.charAt(i)-65]++;
 		}
-		for(int i=0; i<freq.length;i++)
+		for(int i=0;i<freq.length;i++)
 		{
 			if(freq[i]==0)
 			{
-				System.out.println("Is a Panagram");
-			}
-			else
-			{
-				System.out.println("Is not a Panagram");
-			}
-		}
+				return false;
+			}}
+		return true;
 	}
 
 	public void reverse()
@@ -113,26 +106,17 @@ public class StringPractice {
 		  
 	}
 
-	public void isAllVowelsPresent()
+	public static boolean isAllVowelsPresent(String str) 
 	{
-		String vowels = "Aabcdefghi";
-		System.out.println("All Vowel present");
-		char c = 0;
-		    switch (c) {
-		        case 'a':            
-		        case 'e':           
-		        case 'i':           
-		        case 'o':            
-		        case 'u':            
-		        case 'A':
-		        case 'E':            
-		        case 'I':           
-		        case 'O':            
-		        case 'U':
-		            System.out.println("vowels is present");
-		        default:
-		            System.out.println("vowles is not present");
-		    }
+		for (int i = 0; i < str.length(); i++) 
+		{
+			char ch = str.charAt(i);
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') 
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public void countVowels()
@@ -164,9 +148,11 @@ public class StringPractice {
 
 		
 		s.isAnagram();
+		
 
 		
-		s.isPanagram();
+		
+		System.out.println(isPanagaram("Excelsoft"));
 
 		
 		s.reverse();
@@ -175,7 +161,8 @@ public class StringPractice {
 		s.countWords();
 
 		
-		s.isAllVowelsPresent();
+		
+		System.out.println(isAllVowelsPresent("excelsoft"));
 
 		
 		s.countVowels();
