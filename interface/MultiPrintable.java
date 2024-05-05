@@ -1,0 +1,4 @@
+interface MultiPrintable
+{  
+void print();  
+}  
