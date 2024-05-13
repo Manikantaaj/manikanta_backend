@@ -14,7 +14,6 @@ public class MainRunner {
 		EntityTransaction transaction = manager.getTransaction();
 		
 		transaction.begin();
-		manager.persist(transaction);
 		transaction.commit();
 	}
 }
