@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum ContactType {
 
-	PERSONAL("PERSONAL"), OFFICE("OFFICE");
+	PERSONAL, OFFICE;
 	
-	private final String contactType;
+	private  String contactType;
 }

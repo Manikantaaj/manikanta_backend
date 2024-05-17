@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum AddressType {
 
-	PERAMANENT("PERAMANENT"), CURRENT("CURRENT");
+	PERAMANENT, CURRENT;
 	
-	private final String addressType;
+	private String addressType;
 }

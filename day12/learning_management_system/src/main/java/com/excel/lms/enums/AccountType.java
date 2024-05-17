@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum AccountType {
 
-	SAVING("SAVING"), CURRENT("CURRENT"), SALARY("SALARY");
+	SAVING, SALARY, CURRENT;
 	
-	private final String accountType;
+	private String accountType;
 }

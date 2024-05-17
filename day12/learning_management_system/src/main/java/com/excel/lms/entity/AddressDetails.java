@@ -1,11 +1,18 @@
 package com.excel.lms.entity;
 
+import com.excel.lms.enums.AddressType;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +34,7 @@ public class AddressDetails {
 	private Integer addressId;
 	
 	@Enumerated(EnumType.STRING)
-	private String addressType;
+	private AddressType addressType;
 	
 	private String doorNo;
 	private String street;
@@ -36,4 +43,8 @@ public class AddressDetails {
 	private String state;
 	private Double pinCode;
 	private String landMark;
+	
+	@JoinColumn(name = "employee_id", referencedColumnName = "employeeId")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private EmployeePrimaryInfo primaryInfo;
 }

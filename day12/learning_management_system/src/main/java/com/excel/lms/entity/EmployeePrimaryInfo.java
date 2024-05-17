@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.excel.lms.enums.Designation;
+import com.excel.lms.enums.EmployeeStatus;
 import com.excel.lms.enums.Gender;
 
 import jakarta.persistence.CascadeType;
@@ -50,10 +51,11 @@ public class EmployeePrimaryInfo {
 	
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
+	
 	private String nationality;
 	
 	@Enumerated(EnumType.STRING)
-	private String employeeStatus;
+	private EmployeeStatus employeeStatus;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
 	private EmployeeSecondaryInfo secondaryInfo;

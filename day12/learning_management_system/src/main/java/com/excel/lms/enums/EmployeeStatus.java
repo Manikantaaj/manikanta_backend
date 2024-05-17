@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum EmployeeStatus {
 
-	TERMINATED("TERMINATED"), ACTIVE("ACTIVE"), NOTICEPEROID("NOTICEPEROID");
+	TERMINATED, ACTIVE, NOTICEPEROID;
 	
-	private final String employeeStatus;
+	private String employeeStatus;
 }

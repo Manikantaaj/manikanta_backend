@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum EducationType {
 
-	POST_GRADUATE("POST-GRADUATE"), UNDER_GRADUATE("UNDER-GRADUATE"), MASTER("MASTER");
+	POST_GRADUATE, UNDER_GRADUATE, MASTER;
 	
-	private final String employeeType;
+	private String employeeType;
 }
