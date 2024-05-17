@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.excel.lms.enums.Designation;
+import com.excel.lms.enums.EmployeeStatus;
 import com.excel.lms.enums.Gender;
 
 import jakarta.persistence.CascadeType;
@@ -36,6 +37,7 @@ public class EmployeePrimaryInfo {
 	private Integer primaryId;
 	
 	private String employeeId;
+	
 	private String employeeName;
 	private LocalDate dateOfJoining;
 	private LocalDate dateOfBirth;
@@ -50,29 +52,30 @@ public class EmployeePrimaryInfo {
 	
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
+	
 	private String nationality;
 	
 	@Enumerated(EnumType.STRING)
-	private String employeeStatus;
+	private EmployeeStatus employeeStatus;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private EmployeeSecondaryInfo secondaryInfo;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private List<EducationDetails> educationDetails;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private List<AddressDetails> addressDetails;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private BankDetails bankDetails;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfos")
 	private List<TechnicalSkill> technicalSkills;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private List<Experience> experiences;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primary")
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "primaryInfo")
 	private List<Contact> contacts;
 }
