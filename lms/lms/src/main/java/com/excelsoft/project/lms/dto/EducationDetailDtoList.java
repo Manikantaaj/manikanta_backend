@@ -18,4 +18,5 @@ public class EducationDetailDtoList {
 	private String employeeId;
 	
 	private List<EducationDetailDto> education;
+
 }

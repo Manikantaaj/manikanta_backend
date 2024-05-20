@@ -7,6 +7,8 @@ import com.excelsoft.project.lms.dto.EducationDetailDtoList;
 import com.excelsoft.project.lms.dto.EmployeePrimaryInfoDto;
 import com.excelsoft.project.lms.dto.EmployeeSecondaryInfoDto;
 import com.excelsoft.project.lms.dto.ExperienceList;
+import com.excelsoft.project.lms.dto.TechnicalSkillDto;
+import com.excelsoft.project.lms.dto.TechnicalSkillDtoList;
 import com.excelsoft.project.lms.entity.EmployeeSecondaryInfo;
 
 public interface EmployeePrimaryInfoService {
@@ -30,5 +32,8 @@ public interface EmployeePrimaryInfoService {
 
 
 	public String addExperienceList(ExperienceList dto);
+
+
+	public String addSkills(TechnicalSkillDtoList dto);
 
 }

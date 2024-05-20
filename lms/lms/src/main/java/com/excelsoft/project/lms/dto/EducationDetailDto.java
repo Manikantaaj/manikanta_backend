@@ -26,5 +26,6 @@ public class EducationDetailDto {
 	private String specialization;
 	private String state;
 	private String employeeId;
+	
 
 }

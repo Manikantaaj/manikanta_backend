@@ -17,5 +17,5 @@ public class AddressDetailList {
 
 	private String employeeId;
 	
-	private List<AddressDetailDto> addressDetailList;
+	private List<AddressDetailDto> address;
 }

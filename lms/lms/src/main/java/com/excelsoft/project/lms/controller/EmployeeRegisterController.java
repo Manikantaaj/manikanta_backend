@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.excelsoft.project.lms.dto.AddressDetailList;
@@ -25,8 +26,11 @@ import com.excelsoft.project.lms.dto.EducationDetailDtoList;
 import com.excelsoft.project.lms.dto.EmployeePrimaryInfoDto;
 import com.excelsoft.project.lms.dto.EmployeeSecondaryInfoDto;
 import com.excelsoft.project.lms.dto.ExperienceList;
+import com.excelsoft.project.lms.dto.TechnicalSkillDto;
+import com.excelsoft.project.lms.dto.TechnicalSkillDtoList;
 import com.excelsoft.project.lms.entity.BankDetail;
 import com.excelsoft.project.lms.entity.EmployeeSecondaryInfo;
+import com.excelsoft.project.lms.entity.TechnicalSkill;
 import com.excelsoft.project.lms.response.Success;
 import com.excelsoft.project.lms.service.EmployeePrimaryInfoService;
 
@@ -101,5 +105,13 @@ public class EmployeeRegisterController {
 		String employeeId = employeePrimaryInfoService.addExperienceList(dto);
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(Success.<String>builder().data(employeeId)
 				.isError(false).message("Experience details added").build());
+	}
+	
+	@PostMapping(path = "/tinfo")
+	public ResponseEntity<Success<String>> addSkill(@RequestBody TechnicalSkillDtoList dto)
+	{
+		String employeeId = employeePrimaryInfoService.addSkills(dto);
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(Success.<String>builder().data(employeeId)
+				.isError(false).message("skills details added").build());
 	}
 }

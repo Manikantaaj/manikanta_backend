@@ -1,4 +1,6 @@
-package com.excel.lms.dto;
+package com.excelsoft.project.lms.dto;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ContactDto {
+public class TechnicalSkillDtoList {
 
-	private Integer contactId;
+	private String employeeId;
 	
-	private String contactType;
-	private String contactNumber;
+	private List<TechnicalSkillDto> skills;
 }

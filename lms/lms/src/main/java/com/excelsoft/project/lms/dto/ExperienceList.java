@@ -17,5 +17,5 @@ public class ExperienceList {
 
 	private String employeeId;
 	
-	private List<ExperienceDto> experienceList;
+	private List<ExperienceDto> experience;
 }

@@ -33,6 +33,7 @@ public class TechnicalSkill {
 	
 	private String skillType;
 	private String skillRating;
+	private Integer yearOfExperience;
 	
 	@JoinTable(name = "map_skill_employee", joinColumns = @JoinColumn(name = "skill_id"), inverseJoinColumns = @JoinColumn(name = "employee_id"))
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

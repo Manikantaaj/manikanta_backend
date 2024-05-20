@@ -17,5 +17,5 @@ public class ContactListDto {
 
 	private String employeeId;
 	
-	private List<ContactDto> contactList;
+	private List<ContactDto> contact;
 }
